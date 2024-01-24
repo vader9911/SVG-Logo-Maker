@@ -1,24 +1,24 @@
+//file dependencies 
 const fs = require('fs');
 const color = require('color-name');
 const inquirer = require('inquirer');
 
-// const colorName = require('color-name');
+// import other file dependencies 
 const saveFile = require('./lib/save');
 const {Shape, Text, Square, Circle, Triangle } = require('./lib/shapes');
 const questions = require('./lib/questions');
-const { text } = require('express');
 
-
-
+//imports questions form questions.js  and prompts user
 inquirer.prompt(questions).then(function(answer){
-    console.log(answer);
-
     
 
+    
+//set txt content and color
     const textContent = new Text();
     textContent.setColor(answer.txtColor);
     textContent.setText(answer.text);
     
+    //switch case for handling shape type
     let shapeType;
     switch (answer.shape) {
          case 'Square':
@@ -36,18 +36,16 @@ inquirer.prompt(questions).then(function(answer){
             break;
     }
 
-
+//combine the shape and the text 
     const svg = shapeType.render() + textContent.render();
-
+//create a new shape from the combined svg
     const shape = new Shape(svg);
     
     
-    
+    //save the file with the chosen filename
     saveFile(answer.filename, shape.render());
 
 
 });
 
 
-
-// save(answer.filename)
