@@ -38,7 +38,7 @@ This is a simple Node.js application that generates a img.svg file based on user
 5. Answer the prompted questions to provide information about your logo.
 6. The generated img.svg file will be saved in the examples directory.
 
-A brief walkthrough video can be found [Here]()
+A brief walkthrough video can be found [Here](https://drive.google.com/file/d/1AYA3Zjw5jfOm9xYYJdoqJP7tfUpqR9PG/view?usp=sharing)
 
 ## License
 
